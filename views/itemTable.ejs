@@ -1,0 +1,28 @@
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Category</th>
+        <th>Stock</th>
+        <th>Supplier</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <% items.map((item)=>{ %>
+        <tr>
+            <td>
+                <%=item.name%>
+            </td>
+            <td>
+                <%=item.category%>
+            </td>
+            <td>
+                <%=item.stock === 0 ? 'Out of Stock' : item.stock%>
+            </td>
+            <td>
+                <%=item.supplier%>
+            </td>
+            <td><a href="/item/<%=item.product_id%>"><button>Update</button></a></td>
+            <td><form action="/delete/item/<%=item.product_id%>" method="post"><button type="submit">Delete</button></form></td>
+        </tr>
+        <% }) %>
+</table>

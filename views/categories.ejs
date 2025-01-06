@@ -1,0 +1,23 @@
+<html>
+<h1>MIJU</h1>
+<%- include('navbar', {links: links}) %>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Products</th>
+            <th></th>
+        </tr>
+        <% categories.map((category)=>{ %>
+            <tr>
+                <td>
+                    <%=category.category%>
+                </td>
+                <td>
+                    <%=category.count%>
+                </td>
+                <td><a href="/categories/<%=category.category_id%>"><button>View</button></a></td>
+            </tr>
+            <% }) %>
+    </table>
+
+</html>

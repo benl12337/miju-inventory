@@ -1,0 +1,28 @@
+<h1><%=item.name%></h1>
+
+<form method="post">
+    <label for="product">Product Name:</label>
+    <input name="product" type="text" value="<%=item.name%>">
+    
+    <label for="category">Category:</label>
+    <select name="category">
+       <% categories.map((category)=>{ %>
+            <option <%= item.category === category.category ? 'selected' : ''%> value='<%=category.category%>'><%=category.category%></option>
+      <%  }) %>
+    </select>
+
+    <label for="supplier">Supplier:</label>
+    <select name="supplier">
+       <% suppliers.map((supplier)=>{ %>
+            <option <%= item.supplier === supplier.supplier ? 'selected' : ''%> value='<%=supplier.supplier%>' ><%=supplier.supplier%></option>
+      <%  }) %>
+    </select>
+
+    <label for="stock">Stock:</label>
+    <input type="number" value=<%=item.stock%> name="stock">
+
+    <label for="comment">Comment:</label>
+    <textarea name="comment" value=<%=item.comment%>></textarea>
+
+    <button type="submit">Update</button>
+</form>

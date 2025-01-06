@@ -1,0 +1,29 @@
+<h1>New Item</h1>
+
+<form method="post">
+    <label for="product">Product Name:</label>
+    <input name="product" type="text">
+    
+    <label for="category">Category:</label>
+    <select name="category">
+       <% categories.map((category)=>{ %>
+            <option value="<%=category.category%>"><%=category.category%></option>
+      <%  }) %>
+    </select>
+
+    <label for="supplier">Supplier:</label>
+
+    <select name="supplier">
+       <% suppliers.map((supplier)=>{ %>
+            <option value="<%=supplier.supplier%>"><%=supplier.supplier%></option>
+      <%  }) %>
+    </select>
+
+    <label for="stock">Stock:</label>
+    <input type="number" name="stock">
+
+    <label for="comment">Comment:</label>
+    <textarea name="comment"></textarea>
+
+    <button type="submit">Add Item</button>
+</form>

@@ -1,0 +1,20 @@
+<html>
+    <h1>MIJU</h1>
+<%- include('navbar', {links: links}) %>
+<table>
+   <tr>
+   <th>Supplier</th>
+   <th>Prefecture</th>
+   <th>Products</th>
+   <th></th>
+   </tr>
+   <% suppliers.map((supplier)=>{ %>
+    <tr>
+        <td><%=supplier.supplier%></td>
+        <td><%=supplier.prefecture%></td>
+        <td><%=supplier.count%></td>
+        <td><a href="/suppliers/<%=supplier.supplier_id%>"><button>View</button></a></td>
+    </tr>
+<% }) %>
+</table>
+</html>
